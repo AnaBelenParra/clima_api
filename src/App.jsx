@@ -38,8 +38,10 @@ export default function app(){
       const response = await fetch(`${API_WEATHER}${city}`);
       const data = await response.json();
 
-      if(data.error)
-      throw {message: data.error.message };
+      if(data.error){
+
+        throw {message: data.error.message };
+      }
       console.log(data);
 
       setWeather({
